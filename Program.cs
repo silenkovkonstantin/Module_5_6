@@ -5,18 +5,7 @@ class Program
     static void Main(string[] args)
     {
         var user = EnterUser();
-
-        Console.WriteLine(user.Item1);
-        Console.WriteLine(user.Item2);
-        Console.WriteLine(user.Item3);
-        for (int i = 0; i < user.Item4.Length; i++)
-        {
-            Console.WriteLine(user.Item4[i]);
-        }
-        for (int i = 0; i < user.Item5.Length; i++)
-        {
-            Console.WriteLine(user.Item5[i]);
-        }
+        PrintTuple(user);
     }
 
     static (string Name, string LastName, int Age, string[] pets, string[] favcolors) EnterUser()
@@ -120,5 +109,20 @@ class Program
                 return true;
         }
         return false;
+    }
+
+    static void PrintTuple((string Name, string LastName, int Age, string[] pets, string[] favcolors) user)
+    {
+        Console.WriteLine(user.Item1);
+        Console.WriteLine(user.Item2);
+        Console.WriteLine(user.Item3);
+        for (int i = 0; i < user.Item4.Length; i++)
+        {
+            Console.WriteLine(user.Item4[i]);
+        }
+        for (int i = 0; i < user.Item5.Length; i++)
+        {
+            Console.WriteLine(user.Item5[i]);
+        }
     }
 }
